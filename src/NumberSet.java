@@ -31,11 +31,12 @@ public class NumberSet {
     public void remove(int i) throws Exception {
         boolean occurred = false;
 
-        for (int j = 0; j < size; j++) {
-            if (nSet[j] == i) {
-                shiftListLeft(j);
-                size--;
+        for (int currentNo = 0; currentNo < size; currentNo++) {
+            if (nSet[currentNo] == i) {
+                shiftListLeft(currentNo);
                 occurred = true;
+
+                currentNo--; //Check new number at this index again
             }
         }
 
@@ -45,11 +46,14 @@ public class NumberSet {
 
     /**
      * Przesuwa listę o jeden w lewo (rozpoczynając od beginning) nadpisując element znajdujący się pod indeksem beginning
+     *
      * @param beginning indeks nadpisywanego elementu
      */
     private void shiftListLeft(int beginning) {
         for (int i = beginning; i < size - 1; i++)
             nSet[i] = nSet[i + 1];
+
+        size--;
     }
 
     /**
@@ -127,13 +131,16 @@ public class NumberSet {
     public static void main(String[] args) {
         NumberSet numberSet = new NumberSet();
         try {
-            numberSet.add(5);
-            numberSet.add(6);
+            for (int i = 0; i < 100; i++)
+                numberSet.add(5);
+
+            numberSet.remove(5);
+            //numberSet.add(6);
 
             //numberSet.divideAllElementsBy(2);
 
-            System.out.println("Random val: " + numberSet.getRandomValue());
-            System.out.println("Contains 5: " + numberSet.contains(5));
+            //System.out.println("Random val: " + numberSet.getRandomValue());
+            //System.out.println("Contains 5: " + numberSet.contains(5));
             System.out.println("Size: " + numberSet.getSize());
             System.out.println("Sum: " + numberSet.getSumOfElements());
         } catch (Exception ex) {
