@@ -43,6 +43,10 @@ public class NumberSet {
             throw new Exception("Liczba nie wystąpiła!");
     }
 
+    /**
+     * Przesuwa listę o jeden w lewo (rozpoczynając od beginning) nadpisując element znajdujący się pod indeksem beginning
+     * @param beginning indeks nadpisywanego elementu
+     */
     private void shiftListLeft(int beginning) {
         for (int i = beginning; i < size - 1; i++)
             nSet[i] = nSet[i + 1];
@@ -56,9 +60,9 @@ public class NumberSet {
      **/
     public int getRandomValue() throws Exception {
         Random random = new Random();
-        int randomVal = random.nextInt() % size;
+        int randomVal = random.nextInt(size);
 
-        remove(randomVal);
+        remove(nSet[randomVal]);
 
         return randomVal;
     }
@@ -124,9 +128,18 @@ public class NumberSet {
         NumberSet numberSet = new NumberSet();
         try {
             numberSet.add(5);
+            numberSet.add(6);
+
+            //numberSet.divideAllElementsBy(2);
+
+            System.out.println("Random val: " + numberSet.getRandomValue());
+            System.out.println("Contains 5: " + numberSet.contains(5));
+            System.out.println("Size: " + numberSet.getSize());
+            System.out.println("Sum: " + numberSet.getSumOfElements());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        System.out.println(numberSet.getSize());
+
+
     }
 }
