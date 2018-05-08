@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Asercja {
+public class NumberSet {
     private static int MAX_SIZE = 100;
     private int[] nSet = new int[MAX_SIZE];
     private int size;
@@ -118,5 +118,15 @@ public class Asercja {
      */
     public int getSize() {
         return size;
+    }
+
+    public static void main(String[] args) {
+        NumberSet numberSet = new NumberSet();
+        try {
+            numberSet.add(5);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        System.out.println(numberSet.getSize());
     }
 }
