@@ -1,3 +1,5 @@
+package university.sob.lab2;
+
 import java.util.Random;
 
 /**
@@ -118,7 +120,7 @@ public class NumberSet {
                 allNoPositive = false;
         }
 
-        assert !allNoPositive || sum >= 0 : "Suma liczb dodanich jest ujemna!";
+        assert !allNoPositive || sum >= 0 : "Suma liczb dodatnich jest ujemna!";
 
         return sum;
     }

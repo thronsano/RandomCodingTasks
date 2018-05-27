@@ -1,3 +1,5 @@
+package hackerrank;
+
 import java.util.*;
 
 public class ChallengeAnagrams {
