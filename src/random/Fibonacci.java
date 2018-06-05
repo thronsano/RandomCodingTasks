@@ -31,7 +31,7 @@ public class Fibonacci {
         return currentNo;
     }
 
-    private int getFibonacciNumber(int desiredIndex, Technique technique) {
+    public int getFibonacciNumber(int desiredIndex, Technique technique) {
         if (desiredIndex <= 0)
             return 0;
         else if (desiredIndex == 1)
