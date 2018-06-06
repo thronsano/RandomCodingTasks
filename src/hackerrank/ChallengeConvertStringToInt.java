@@ -1,8 +1,8 @@
-package random;
+package hackerrank;
 
 //Implementation of a class converting String to an int without parseInt
 //Input is a pure String like "1412"
-public class StringToInt {
+public class ChallengeConvertStringToInt {
 
     public int customParseInt(String no) {
         String localCopy;

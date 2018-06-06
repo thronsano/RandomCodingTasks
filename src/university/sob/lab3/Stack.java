@@ -36,5 +36,4 @@ public class Stack {
     public int size() {
         return index;
     }
-
 }

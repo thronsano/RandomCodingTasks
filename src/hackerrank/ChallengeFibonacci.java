@@ -1,9 +1,9 @@
-package random;
+package hackerrank;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class Fibonacci {
-    enum Technique {
+public class ChallengeFibonacci {
+    public enum Technique {
         RECURSIVE,
         ITERATION
     }
@@ -48,11 +48,11 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        Fibonacci fibonacci = new Fibonacci();
+        ChallengeFibonacci challengeFibonacci = new ChallengeFibonacci();
 
         int desiredIndex = 10;
 
-        System.out.println(fibonacci.getFibonacciNumber(desiredIndex, Technique.RECURSIVE));
-        System.out.println(fibonacci.getFibonacciNumber(desiredIndex, Technique.ITERATION));
+        System.out.println(challengeFibonacci.getFibonacciNumber(desiredIndex, Technique.RECURSIVE));
+        System.out.println(challengeFibonacci.getFibonacciNumber(desiredIndex, Technique.ITERATION));
     }
 }
